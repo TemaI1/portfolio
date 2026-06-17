@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Имя Фамилия | Frontend Разработчик</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифт Inter от Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">DevPortfolio</div>
+            <nav class="nav">
+                <a href="#about">Обо мне</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секция Hero -->
+        <section class="hero" id="about">
+            <div class="container">
+                <h1>Привет, я <span class="accent">Артём Майстренко</span></h1>
+                <p class="subtitle">Frontend-разработчик. Создаю быстрые, адаптивные и pixel-perfect сайты на чистом HTML, CSS и JavaScript.</p>
+                <div class="skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3 (Flex/Grid)</span>
+                    <span class="skill-tag">JavaScript (ES6+)</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Figma</span>
+                </div>
+                <a href="#contacts" class="btn">Связаться со мной</a>
+            </div>
+        </section>
+
+        <!-- Секция Проекты (Пока заглушки) -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Мои проекты</h2>
+                <p class="section-desc">Мои работы. Сейчас я активно работа над новыми кейсами.</p>
+                
+                <div class="projects-grid">
+                    <!-- Заглушка проекта 1 -->
+                    <div class="project-card">
+                        <div class="project-placeholder">Скоро</div>
+                        <h3>Лендинг для бизнеса</h3>
+                        <p>Адаптивная верстка по макету из Figma. HTML, CSS, JS.</p>
+                        <span class="status">В разработке</span>
+                    </div>
+                    
+                    <!-- Заглушка проекта 2 -->
+                    <div class="project-card">
+                        <div class="project-placeholder">Скоро</div>
+                        <h3>Многостраничный сайт-визитка</h3>
+                        <p>Чистый код, семантическая верстка, интерактивные элементы.</p>
+                        <span class="status">В разработке</span>                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <h2>Давайте работать вместе</h2>
+            <p>Открыт для предложений по верстке и frontend-разработке.</p>
+            <div class="contacts-links">
+                <a href="https://t.me/ваш_ник" target="_blank" class="contact-btn telegram">Telegram</a>
+                <a href="mailto:your.email@example.com" class="contact-btn email">Email</a>
+                <a href="https://github.com/ваш_ник" target="_blank" class="contact-btn github">GitHub</a>
+            </div>
+            <p class="copyright">© <span id="year"></span> Имя Фамилия. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
