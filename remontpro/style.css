@@ -1,0 +1,493 @@
+/* =========================================
+   1. ПЕРЕМЕННЫЕ И СБРОС СТИЛЕЙ
+   ========================================= */
+:root {
+    --primary: #f97316;       /* Оранжевый акцент */
+    --primary-hover: #ea580c; /* Темно-оранжевый для ховера */
+    --text-main: #1e293b;     /* Темно-синий для текста */
+    --text-muted: #64748b;    /* Серый для второстепенного текста */
+    --bg-light: #f8fafc;      /* Светло-серый фон для секций */
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --font-main: 'Inter', sans-serif;
+    --container-width: 1100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Плавный скролл средствами CSS */
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   2. ОБЩИЕ КОМПОНЕНТЫ (КНОПКИ, ЗАГОЛОВКИ)
+   ========================================= */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-main);
+    background-color: var(--bg-light);
+}
+
+/* =========================================
+   3. HEADER (ШАПКА)
+   ========================================= */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--primary);
+}
+
+.btn-callback {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-callback:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Бургер-меню (скрыто на десктопе) */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* =========================================
+   4. HERO (ПЕРВЫЙ ЭКРАН)
+   ========================================= */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); 
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* =========================================
+   5. ПРЕИМУЩЕСТВА (GRID)
+   ========================================= */
+.advantages {
+    padding: 80px 0;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.advantage-card {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.advantage-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.advantage-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.advantage-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   6. УСЛУГИ
+   ========================================= */
+.services {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card .price {
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.service-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.service-card li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.service-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* =========================================
+   7. ЭТАПЫ РАБОТЫ (TIMELINE)
+   ========================================= */
+.stages {
+    padding: 80px 0;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+/* Вертикальная линия */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-number {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    z-index: 1; /* Чтобы кружок был поверх линии */
+}
+
+.timeline-content h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+}
+
+/* =========================================
+   8. ФОРМА ЗАЯВКИ
+   ========================================= */
+.contact {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.contact-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.btn-large {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.form-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   9. FOOTER (ПОДВАЛ)
+   ========================================= */
+.footer {
+    background-color: var(--text-main);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.footer-col p {
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   10. АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА)
+   ========================================= */
+@media (max-width: 992px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Скрываем десктопное меню и кнопку, показываем бургер */
+    .nav, .btn-callback {
+        display: none;
+    }
+    
+    .burger {
+        display: flex;
+    }
+
+    /* Стили для выпадающего мобильного меню */
+    .nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .advantages-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
