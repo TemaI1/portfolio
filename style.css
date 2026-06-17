@@ -6,6 +6,7 @@
     --text-muted: #94a3b8;
     --accent: #3b82f6;
     --accent-hover: #2563eb;
+    --border: #334155;
     --font-main: 'Inter', sans-serif;
 }
 
@@ -31,7 +32,7 @@ body {
 /* Header */
 .header {
     padding: 20px 0;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     background-color: rgba(15, 23, 42, 0.9);
@@ -100,7 +101,7 @@ body {
     border-radius: 20px;
     font-size: 0.9rem;
     color: var(--text-muted);
-    border: 1px solid #334155;
+    border: 1px solid var(--border);
 }
 
 /* Buttons */
@@ -144,7 +145,7 @@ body {
     background-color: var(--card-bg);
     border-radius: 12px;
     padding: 20px;
-    border: 1px solid #334155;
+    border: 1px solid var(--border);
     transition: transform 0.3s;
 }
 
@@ -152,20 +153,9 @@ body {
     transform: translateY(-5px);
 }
 
-.project-placeholder {
-    height: 150px;
-    background-color: #334155;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
 .project-card h3 {
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .project-card p {
@@ -174,21 +164,138 @@ body {
     margin-bottom: 15px;
 }
 
-.status {
-    display: inline-block;
-    background-color: rgba(59, 130, 246, 0.1);
-    color: var(--accent);
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.8rem;
+/* =========================================
+   МОКАП БРАУЗЕРА
+   ========================================= */
+.browser-mockup {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0;
+    border: 1px solid #475569;
+}
+
+.browser-header {
+    background: #f1f5f9;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.browser-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.browser-url {
+    flex: 1;
+    background: #fff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    border: 1px solid #e2e8f0;
+}
+
+.browser-preview {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.preview-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.preview-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.preview-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.preview-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Цветовые темы превью */
+.remont-preview {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    color: #f97316;
+}
+
+.law-preview {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    color: #1e40af;
+}
+
+/* Кнопки внутри карточек проектов */
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.project-btn,
+.project-btn-outline {
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    text-align: center;
+    flex: 1;
+}
+
+.project-btn {
+    background-color: var(--accent);
+    color: white;
+}
+
+.project-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.project-btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.project-btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 /* Footer */
 .footer {
     padding: 80px 0 40px;
     text-align: center;
-    border-top: 1px solid #334155;
+    border-top: 1px solid var(--border);
 }
 
 .footer h2 {
@@ -213,7 +320,7 @@ body {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    border: 1px solid #334155;
+    border: 1px solid var(--border);
     color: var(--text-main);
     transition: all 0.3s;
 }
@@ -233,4 +340,16 @@ body {
     .hero h1 { font-size: 2.2rem; }
     .header .container { flex-direction: column; gap: 15px; }
     .nav a { margin: 0 10px; }
+    
+    .browser-preview {
+        height: 130px;
+    }
+    
+    .preview-title {
+        font-size: 1.2rem;
+    }
+    
+    .preview-icon {
+        font-size: 2rem;
+    }
 }
